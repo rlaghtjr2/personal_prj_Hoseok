@@ -22,6 +22,25 @@
         </tr>
       </tbody>
     </table>
+
+  <!--  paging을 위한 코드 추가  -->
+    <ul class="pagination h-100 justify-content-center align-items-center">
+      <li class="page-item" th:if="${result.prev}">
+        <a class="page-link" th:href="@{/guestbook/list(page= ${result.start-1})}" tabindex="-1">Previous</a>
+      </li>
+
+      <li th:class=" 'page-item ' + ${result.page == page? 'active' : ''} "
+          th:each="page: ${result.pageList}">
+        <a class="page-link" th:href="@{/guestbook/list(page=${page})}">
+          [[${page}]]
+        </a>
+      </li>
+
+      <li class="page-item" th:if="${result.next}">
+        <a class="page-link" th:href="@{/guestbook/list(page=${result.end+1})}">Next</a>
+      </li>
+    </ul>
+  <!--  page를 위한 코드 추가 끝  -->
   </th:block>
 </th:block>
 </html>
