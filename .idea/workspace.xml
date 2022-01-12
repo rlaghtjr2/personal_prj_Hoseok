@@ -58,20 +58,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GuestbookApplicationTests.testQuery1">
-    <configuration name="GuestbookApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.zerock.guestbook.GuestbookApplication" />
-      <module name="guestbook.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.zerock.guestbook.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.GuestbookApplicationTests.testQuery2">
     <configuration name="GuestbookApplicationTests.insertDummies (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -109,6 +96,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.zerock.guestbook.GuestbookApplicationTests.testQuery1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GuestbookApplicationTests.testQuery2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.zerock.guestbook.GuestbookApplicationTests.testQuery2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GuestbookApplicationTests.testQuery2" />
         <item itemvalue="Gradle.GuestbookApplicationTests.testQuery1" />
         <item itemvalue="Gradle.GuestbookApplicationTests.updateTest" />
         <item itemvalue="Gradle.GuestbookApplicationTests.insertDummies (1)" />
         <item itemvalue="Gradle.personal_prj_Hoseok [compileQuerydsl]" />
-        <item itemvalue="Application.GuestbookApplication" />
       </list>
     </recent_temporary>
   </component>
