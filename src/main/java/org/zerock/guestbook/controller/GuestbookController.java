@@ -43,4 +43,9 @@ public class GuestbookController {
 
         return "redirect:/guestbook/list";
     }
+
+    @GetMapping("/register")
+    public void register(){
+        log.info("register get...");
+    }
 }
