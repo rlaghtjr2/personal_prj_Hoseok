@@ -32,4 +32,7 @@ public interface GuestbookService {
 
         return dto;
     }
+
+    /* 방명록 조회처리 기능 */
+    GuestbookDTO read(Long gno);
 }
