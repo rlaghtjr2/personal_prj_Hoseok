@@ -92,4 +92,5 @@ class GuestbookApplicationTests {
 			System.out.println(guestbook);
 		});
 	}
+
 }
