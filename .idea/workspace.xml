@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0605ddce-fc66-4d9d-85a4-7456976eaaac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/guestbook/entity/Guestbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/guestbook/entity/Guestbook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/zerock/guestbook/GuestbookApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/zerock/guestbook/GuestbookApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +58,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GuestbookApplicationTests.updateTest">
+  <component name="RunManager" selected="Gradle.GuestbookApplicationTests.testQuery1">
     <configuration name="GuestbookApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.zerock.guestbook.GuestbookApplication" />
       <module name="guestbook.main" />
@@ -87,6 +86,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.zerock.guestbook.GuestbookApplicationTests.insertDummies&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GuestbookApplicationTests.testQuery1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.zerock.guestbook.GuestbookApplicationTests.testQuery1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,6 +164,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GuestbookApplicationTests.testQuery1" />
         <item itemvalue="Gradle.GuestbookApplicationTests.updateTest" />
         <item itemvalue="Gradle.GuestbookApplicationTests.insertDummies (1)" />
         <item itemvalue="Gradle.personal_prj_Hoseok [compileQuerydsl]" />
