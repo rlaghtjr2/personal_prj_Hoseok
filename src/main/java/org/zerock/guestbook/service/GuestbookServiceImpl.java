@@ -1,5 +1,7 @@
 package org.zerock.guestbook.service;
 
+import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +11,7 @@ import org.zerock.guestbook.dto.GuestbookDTO;
 import org.zerock.guestbook.dto.PageRequestDTO;
 import org.zerock.guestbook.dto.PageResultDTO;
 import org.zerock.guestbook.entity.Guestbook;
+import org.zerock.guestbook.entity.QGuestbook;
 import org.zerock.guestbook.repository.GuestbookRepository;
 
 import javax.swing.text.html.Option;
@@ -42,9 +45,13 @@ public class GuestbookServiceImpl implements GuestbookService{
     @Override
     public PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO) {
         Pageable pageable = requestDTO.getPageable(Sort.by("gno").descending());
-        Page<Guestbook> result = repository.findAll(pageable);
+//        Page<Guestbook> result = repository.findAll(pageable);
+//
+//        Function<Guestbook,GuestbookDTO> fn = (entity -> entityToDto(entity));
+        BooleanBuilder booleanBuilder = getSearch(requestDTO);
 
-        Function<Guestbook,GuestbookDTO> fn = (entity -> entityToDto(entity));
+        Page<Guestbook> result = repository.findAll(booleanBuilder,pageable); // querydsl 사용
+        Function<Guestbook, GuestbookDTO> fn = (entity -> entityToDto(entity));
 
         return new PageResultDTO<>(result,fn);
     }
@@ -78,4 +85,41 @@ public class GuestbookServiceImpl implements GuestbookService{
         }
     }
 
+    /* 검색 기능 */
+    private BooleanBuilder getSearch(PageRequestDTO requestDTO) { // Querydsl 처리
+        String type = requestDTO.getType();
+
+        BooleanBuilder booleanBuilder = new BooleanBuilder();
+
+        QGuestbook qGuestbook = QGuestbook.guestbook;
+
+        String keyword = requestDTO.getKeyword();
+
+        BooleanExpression expression = qGuestbook.gno.gt(0L); // gno > 0 인것만 생성
+
+        booleanBuilder.and(expression);
+
+        if(type == null || type.trim().length() == 0){
+            //검색 조건이 없는 경우
+            return booleanBuilder;
+        }
+
+        BooleanBuilder conditionBuilder = new BooleanBuilder();
+
+        if(type.contains("t")){
+            conditionBuilder.or(qGuestbook.title.contains(keyword));
+        }
+
+        if(type.contains("c")){
+            conditionBuilder.or(qGuestbook.content.contains(keyword));
+        }
+
+        if(type.contains("w")){
+            conditionBuilder.or(qGuestbook.writer.containsIgnoreCase(keyword));
+        }
+
+        booleanBuilder.and(conditionBuilder);
+
+        return booleanBuilder;
+    }
 }
