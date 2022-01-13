@@ -40,6 +40,9 @@ dependencies {
 	//querydsl
 	implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
 	implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
+
+	//java8time
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
 }
 
 test {
